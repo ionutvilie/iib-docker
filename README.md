@@ -10,7 +10,7 @@ The image can be built using standard [Docker commands](https://docs.docker.com/
 
 ~~~
 cd 10.0.0.0
-docker build -t IIBV10IMAGE .
+docker build -t iibv10image .
 ~~~
 
 This will create an image called IIBV10IMAGE in your local docker registry.
@@ -32,7 +32,7 @@ The last important point of configuration when running a container from this ima
 For example:
 
 ~~~
-docker run -e LICENSE=accept -e NODENAME=MYNODE-P IIBV10IMAGE
+docker run -d -p 4414:4414 -p 7800:7800 -e LICENSE=accept -e NODENAME=MYNODE iibv10image
 ~~~
 
 This will run a container that creates and starts an Integration Node called `MYNODE` and exposes ports `4414` and `7800` on random ports on the host machine.  At this point you can use:
